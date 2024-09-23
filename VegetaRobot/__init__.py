@@ -32,17 +32,17 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     )
     quit(1)
 
-ENV = bool(os.environ.get('ENV', False))
+ENV = bool(os.environ.get('ENV', True))
 
 if ENV:
     
     try:
-        OWNER_ID = int(os.environ.get('OWNER_ID', None))
+        OWNER_ID = int(os.environ.get('OWNER_ID', 5696053228))
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid BigInteger.")
 
-    JOIN_LOGGER = os.environ.get('JOIN_LOGGER', None)
-    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
+    JOIN_LOGGER = os.environ.get('JOIN_LOGGER', "@VegetaLogs")
+    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "Nandha")
 
     try:
         DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
@@ -69,9 +69,9 @@ if ENV:
         raise Exception(
             "Your tiger users list does not contain valid BigInteger.")
 
-    TOKEN = os.getenv('TOKEN')
-    API_ID = os.getenv('API_ID')
-    API_HASH = os.getenv('API_HASH')  
+    TOKEN = os.environ.get('TOKEN', "2128359921:AAEkMXZ-Gppo5Eq_0Yl0VdIBKQqSk4h4JVc")
+    API_ID = os.environ.get('API_ID', 28597728)
+    API_HASH = os.environ.get('API_HASH', "64ff048a1bb3a2096b682d7915dfb6d8")  
     NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
     URL = os.environ.get('URL', "")  # Does not contain token
     REPOSITORY = os.environ.get("REPOSITORY", "")
@@ -81,22 +81,22 @@ if ENV:
     WEBHOOK = bool(os.environ.get('WEBHOOK', False))
     PORT = int(os.environ.get('PORT', 443))
     DB_URI = os.getenv('DATABASE_URL')
-    DONATION_LINK = os.environ.get('DONATION_LINK')
+    DONATION_LINK = os.environ.get('DONATION_LINK', "Contact my owner nandha.t.me 🙂")
     LOAD = os.environ.get("LOAD", "").split()
     DEL_CMDS = bool(os.environ.get('DEL_CMDS', True))
     STRICT_GBAN = bool(os.environ.get('STRICT_GBAN', True))
     STRICT_GMUTE = bool(os.environ.get('STRICT_GMUTE', True))
     WORKERS = int(os.environ.get('WORKERS', 8))
-    ALLOW_EXCL = os.getenv('ALLOW_EXCL')
+    ALLOW_EXCL = os.getenv('ALLOW_EXCL', True)
     OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", "") # From:- https://openweathermap.org/api
-    SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
-    UPDATES_CHANNEL = os.environ.get('UPDATES_CHANNEL', None)
+    SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', "VegetaSupport")
+    UPDATES_CHANNEL = os.environ.get('UPDATES_CHANNEL', "VegetaNews")
     SPAMWATCH_SUPPORT_CHAT = os.environ.get('SPAMWATCH_SUPPORT_CHAT', None)
     SPAMWATCH_API = os.environ.get('SPAMWATCH_API', None)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None) # From:- https://www.remove.bg/
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "VegetRobot")
-    LOG_GROUP_ID = os.environ.get('LOG_GROUP_ID', None)
+    LOG_GROUP_ID = os.environ.get('LOG_GROUP_ID', "@VegetaLogs")
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', None)
 
     try:
